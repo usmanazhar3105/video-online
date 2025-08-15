@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Random video chat platform - Connect with strangers worldwide" />
+    <meta name="keywords" content="video chat, random chat, omegle, webcam, stranger chat" />
+    <title>RandomVideoChat.com - Connect with Strangers Worldwide</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎥</text></svg>" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎥 RandomVideoChat.com</h1>
+        <p class="subtitle">Connect with strangers worldwide</p>
+        <div class="controls">
+          <button id="startBtn">Start Chat</button>
+          <button id="nextBtn" disabled>Next</button>
+          <button id="disconnectBtn" disabled>Disconnect</button>
+          <button id="muteBtn" disabled>Mute</button>
+          <button id="cameraBtn" disabled>Camera Off</button>
+        </div>
+      </header>
+      <main class="grid">
+        <section class="video-panel">
+          <div class="video-wrapper">
+            <video id="remoteVideo" autoplay playsinline></video>
+            <div class="label">Stranger</div>
+          </div>
+          <div class="video-wrapper self">
+            <video id="localVideo" autoplay playsinline muted></video>
+            <div class="label">You</div>
+          </div>
+        </section>
+        <aside class="chat-panel">
+          <div id="chatLog" class="chat-log"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off" />
+            <button type="submit">Send</button>
+          </form>
+        </aside>
+      </main>
+      <footer>
+        <p>🌍 RandomVideoChat.com - Built with WebRTC + Socket.IO</p>
+        <p class="disclaimer">⚠️ Use responsibly. Report inappropriate behavior.</p>
+      </footer>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
